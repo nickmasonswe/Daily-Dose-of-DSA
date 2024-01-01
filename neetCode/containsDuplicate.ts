@@ -15,15 +15,17 @@ Constraints:
 */
 
 function containsDuplicate(nums: number[]): boolean {
-  //create map for tracking seen elements 
-  const seen = {};
-  //loop thru the array, checking each el against the map
-  for(let i = 0; i < nums.length; i++) {
-      //if there is a match, return true, short circuit
-      if(seen[nums[i]]) return true;
-  }
-      //if we get to the end and there is not a match, return false
-  return false;
+    //create map for tracking seen elements 
+    const seen = {};
+    //loop thru the array, checking each el against the map
+    for(let num of nums) {
+        //if there is a match, return true, short circuit
+        if(seen.hasOwnProperty(num)) return true;
+        //add the element to seen
+        seen[num] = seen[num];
+    }
+        //if we get to the end and there is not a match, return false
+    return false;
 };
 
 //Time and Space Complexity
