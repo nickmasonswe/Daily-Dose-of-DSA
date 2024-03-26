@@ -30,5 +30,19 @@ function factorial(num, result = 1) {
 console.log(factorial(4)); // -> 24
 console.log(factorial(6)); // -> 720
 /* ------------------------ ------------------------ */
+//Get the length of an array using recursion without accessing its length property.
+
+function getLength(array, count = 0) {
+  //base case
+  if (!array[0]) return count;
+  //recursive case
+  return getLength(array.slice(1), ++count);
+}
+
+// To check if you've completed the challenge, uncomment these console.logs!
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0
 
 /* ------------------------ ------------------------ */
