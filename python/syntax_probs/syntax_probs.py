@@ -9,9 +9,22 @@
 
 def divisible(num,arr):
   for el in arr:
+    # can not do 'if el % num is not 0:' bc of error having to do with int values
     if el % num != 0:
       return False
   return True
 
-print(divisible(3,[9,18,6])) #True
-print(divisible(3,[10,18,6])) #False
+def divisible_recursive(num,arr):
+  if len(arr) == 0:
+    return True
+  if arr[0] % num != 0:
+    return False
+    # note that (num,arr[1] did not work and caused Py to throw a type error. Need to have the colon to let it know I am slicing.
+  return divisible_recursive(num,arr[1:])
+
+
+# print(divisible(3,[9,18,6])) #True
+# print(divisible(3,[10,18,6])) #False
+
+print(divisible_recursive(3,[9,18,6])) #True
+print(divisible_recursive(3,[10,18,6])) #False
