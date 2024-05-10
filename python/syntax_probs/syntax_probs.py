@@ -26,14 +26,31 @@ def divisible_recursive(num,arr):
 # print(divisible(3,[9,18,6])) #True
 # print(divisible(3,[10,18,6])) #False
 
-print(divisible_recursive(3,[9,18,6])) #True
-print(divisible_recursive(3,[10,18,6])) #False
+#print(divisible_recursive(3,[9,18,6])) #True
+#print(divisible_recursive(3,[10,18,6])) #False
 
-#Create a functon "buildSentence" that takes any number of words (strings) and returns a complete sentence with the first word capitalizated and punctuation (add an exclamation point to each sentence).
+#Create a functon "buildSentence" that takes any number of words (string) and returns a complete sentence with the first word capitalizated and punctuation (add an exclamation point to each sentence).
+
+def buildSentence(sentence):
+  return sentence.title() + '!'
+
+print(buildSentence('hi, You are doing great'))
+
+
 
 # Declare a function 'calculate', which takes in a number, initialValue, as a single argument and returns another function.
 # The returned function takes up to 2 arguments, a string (it could be any of 4 basic operators: '+', '-', '*', and '/'), a number, or just a single argument. When invoked with two arguments, return the message "Press enter '=' to see the result!". When the returned function is invoked with just an equal sign ('='), return the evaluated result from all previous expressions (starting at the initialValue). 
  # Note: Do not use the 'eval()' method in JS!
+
+def calculate(initialValue):
+  def do_math():
+    return 0+ initialValue
+  
+  return do_math
+
+calculate_4 = calculate(4)
+print(calculate_4())
+  
 
 #Get the length of an array using recursion without accessing its length property.
 
