@@ -42,16 +42,39 @@ print(buildSentence('hi, You are doing great'))
 # The returned function takes up to 2 arguments, a string (it could be any of 4 basic operators: '+', '-', '*', and '/'), a number, or just a single argument. When invoked with two arguments, return the message "Press enter '=' to see the result!". When the returned function is invoked with just an equal sign ('='), return the evaluated result from all previous expressions (starting at the initialValue). 
  # Note: Do not use the 'eval()' method in JS!
 
-def calculate(initialValue):
-  def do_math():
-    return 0+ initialValue
-  
-  return do_math
+# def calculate(initialValue):
+#   def do_math(operator, number):
+#     if not number:
+#       return initialValue
+#     else:
+#       if operator == '+':
+#         initialValue += number
+#       elif operator == '-':
+#         initialValue -= number
+#       elif operator == '*':
+#         initialValue *= number
+#       elif operator == '/':
+#         initialValue /= number
+#       elif operator == '//':
+#         initialValue //= number
+      
 
-calculate_4 = calculate(4)
-print(calculate_4())
+#       return "Press enter '=' to see the result!"
+#   return do_math
+
+# calculate_4 = calculate(4)
+# calculate_4('*',2)
+# print(calculate_4('='))
   
 
 #Get the length of an array using recursion without accessing its length property.
+
+def recursive_length(arr, length=0):
+  if not arr[0]:
+    return length
+  # 'if not arr[0]: did not work because left out empty array on end. not arr is what I was looking for 
+  return recursive_length(arr[1:],length+1)
+
+print(recursive_length([1,2,3,4,5,'6',[]])) #7
 
 #/Write a function that takes an array of functions and a number that will be piped through all those functions. The input number passes through the first function, whose output is passed as input to the second function, whose output is passed as input to the third function, and so on. Use recursion to return the final output of the last function in the array.
