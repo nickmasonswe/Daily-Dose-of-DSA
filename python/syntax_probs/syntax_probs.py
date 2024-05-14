@@ -42,29 +42,29 @@ print(buildSentence('hi, You are doing great'))
 # The returned function takes up to 2 arguments, a string (it could be any of 4 basic operators: '+', '-', '*', and '/'), a number, or just a single argument. When invoked with two arguments, return the message "Press enter '=' to see the result!". When the returned function is invoked with just an equal sign ('='), return the evaluated result from all previous expressions (starting at the initialValue). 
  # Note: Do not use the 'eval()' method in JS!
 
-# def calculate(initialValue):
-#   def do_math(operator, number):
-#     if not number:
-#       return initialValue
-#     else:
-#       if operator == '+':
-#         initialValue += number
-#       elif operator == '-':
-#         initialValue -= number
-#       elif operator == '*':
-#         initialValue *= number
-#       elif operator == '/':
-#         initialValue /= number
-#       elif operator == '//':
-#         initialValue //= number
+def calculate(initialValue):
+  def do_math(operator, number):
+    if not number:
+      return initialValue
+    else:
+      if operator == '+':
+        initialValue += number
+      elif operator == '-':
+        initialValue -= number
+      elif operator == '*':
+        initialValue *= number
+      elif operator == '/':
+        initialValue /= number
+      elif operator == '//':
+        initialValue //= number
       
 
-#       return "Press enter '=' to see the result!"
-#   return do_math
+      return "Press enter '=' to see the result!"
+  return do_math
 
-# calculate_4 = calculate(4)
-# calculate_4('*',2)
-# print(calculate_4('='))
+calculate_4 = calculate(4)
+calculate_4('*',2)
+print(calculate_4('='))
   
 
 #Get the length of an array using recursion without accessing its length property.
