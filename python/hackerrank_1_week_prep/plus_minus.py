@@ -12,7 +12,7 @@
 # I originally got type error from trying to use a regular string and '+' the floats to the strings.
 # An alternative route that looks good is using the .format() method which I have seen a few times now:
 
-# print("{:.6f}\n{:.6f}\n{:.6f}".format(positive, negative, zero))
+# print("{:.6f}\n{:.6f}\n{:.6f}".format(positive, negative, zero)) note does not have printf
 def plusMinus(arr):
     positive = 0
     negative = 0
