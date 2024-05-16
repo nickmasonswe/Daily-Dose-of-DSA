@@ -76,5 +76,3 @@ def recursive_length(arr, length=0):
   return recursive_length(arr[1:],length+1)
 
 print(recursive_length([1,2,3,4,5,'6',[]])) #7
-
-#/Write a function that takes an array of functions and a number that will be piped through all those functions. The input number passes through the first function, whose output is passed as input to the second function, whose output is passed as input to the third function, and so on. Use recursion to return the final output of the last function in the array.
