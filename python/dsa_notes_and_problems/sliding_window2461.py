@@ -63,7 +63,9 @@ class Solution:
         #loop through length of nums, right_edge explores next elements
         for right_edge in range(len(nums)):
             #while the right_edge value is in the set, move the whole window up 
-            if nums[right_edge] in window_set:
+            # why a while loop: The while loop continues to shift the window until nums[right_edge] is not in window_set
+            # An if statement only performs this operation once, even if nums[right_edge] is still in window_set
+            while nums[right_edge] in window_set:
                 window_set.remove(nums[left_edge])
                 #decrease current_sum by nums[left_edge]
                 #since we removed the left_edge while preparing to move it up
